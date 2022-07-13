@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(/img/bg/Meteor.svg) center center no-repeat fixed;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "header header header"
+        "contenido contenido sidebar"
+        "widget-1 widget-2 sidebar"
+        "footer footer footer";
+    font-family: 'Roboto', sans-serif;
+}
+
+.container>div,
+.container .header,
+.container .contenido,
+.container .sidebar,
+.container .footer {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.container .header {
+    grid-area: header;
+
+}
+
+.header {
+    text-align: center;
+}
+
+.container .contenido {
+    grid-area: contenido;
+}
+
+.container .sidebar {
+    grid-column: 3 / 4;
+    text-align: center;
+    min-height: 100px;
+    grid-area: sidebar;
+    background-color: aliceblue;
+    overflow: scroll;
+}
+
+.container .widget-1,
+.container .widget-2 {
+    height: 100px;
+    text-align: center;
+}
+
+.container .widget-1 {
+    grid-area: widget-1;
+    overflow: scroll;
+    height: 300px;
+}
+
+.widget-1 p {
+    display: flex;
+    position: relative;
+}
+
+.listaC {
+    font-size: larger;
+}
+
+
+.container .widget-2 {
+    grid-area: widget-2;
+    height: 250px;
+}
+
+.list-group-item {
+    margin: 5px;
+    margin-top: 10px;
+    font-size: small;
+
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.container .footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+@media screen and(max-width:768px) {
+    .container {
+        grid-template-areas:
+            "header header header"
+            "contenido contenido contenido"
+            "sidebar sidebar sidebar"
+            "widget-1 widget-1 widget-2"
+            "footer footer footer";
+    }
+}
