@@ -8,6 +8,7 @@
     <script defer src="./js/app.js"></script>
     <script defer src="./js/producto.js"></script>
     <script defer src="./js/carrito.js"></script>
+    <script defer src="./js/variables.js"></script>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,64 +25,52 @@
 <body>
     <div class="container">
         <header class="header">
-            <h2>header</h2>
+            <h1>Adiministrador de Ferreteria</h1>
         </header>
         <main class="contenido">
-            <h1>Contenido</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni accusamus facere tempore harum quod delectus, sit optio cumque exercitationem, voluptate nulla. Ex voluptas laborum cumque distinctio dolores. Aperiam sequi nulla totam similique, magni provident excepturi veniam esse eligendi laboriosam et tempore, impedit harum omnis doloribus, unde vel ab nemo. Voluptatum.</p>
-            <p>Si agregas un item, se agrega a la tabla </p>
-            <div class="form-control">
-                <form id="formulario">
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-                    <input type="number" name="precio" id="precio" placeholder="Precio">
-                    <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion">
-                    <input type="text" name="categoria" id="categoria" placeholder="Categoria">
-                    <input type="text" name="stock" id="stock" placeholder="Stock">
-                    <input id="sweetBtn" type="submit" value="enviar">
-                </form>
-            </div>
+            <h2>Agregar Personal</h2>
+                <div class="form-control">
+                    <form id="formulario">
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                        <input type="text" name="apellido" id="apellido" placeholder="apellido">
+                        <input type="text" name="seccion" id="seccion" placeholder="sección">
+                        <input type="text" name="jornada" id="jornada" placeholder="jornada">
+                        <input id="sweetBtn" type="submit" value="enviar" placeholder="Enviar">
+                    </form>
+                </div>
             <div>
+                <h1>Productos</h1>
                 <table class="table table-striped">
-                    <tbody>
-                        <tr>
-                            <td>fdsg</td>
-                            <td>fsdg</td>
-                            <td>fgsd</td>
-                            <td>gsg</td>
-                            <td>gsfdg</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p id="totalCarrito">total</p>
+                    <tbody id="contenidojson">
+                        <div id="spinnerjson" class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
+                          </div>
+                          <button id="btnAgregar">Agregar</button>
+                          <button id="btnEliminar">Eliminar</button>                  
+                        </table>           
+                    </tbody>                 
             </div>
         </main>
         <aside class="sidebar">
-            <div class="listado">
+            <h1>Personal</h1>
+            <div class="listado" id="listadoPersonal">
                 <ul id="listadoProductos">
                     <li></li>
                 </ul>
             </div>
 
         </aside>
-        <div class="widget-1">
-            <h3>Carrito</h3>
-            <p id="tcarrito" class="listaC">total</p>
-            <div id="listadoCarrito">
-                
-            </div>
-        </div>
+    
         <div class="widget-2">
-            <h3>En proceso</h3>
             <div>
                 <form id="formularioBuscar">
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-                    <input type="submit" value="enviar">
-                    <p>Resultado</p>
                 </form>
             </div>
         </div>
         <footer class="footer">
-            <h3>footer</h3>
+            <h3>Todos los derechos</h3>
         </footer>
 
     </div>

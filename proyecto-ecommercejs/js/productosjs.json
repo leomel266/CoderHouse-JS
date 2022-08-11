@@ -1,0 +1,154 @@
+[
+    {
+        "id": 0,
+        "nombre": "Pala Ancha",
+        "precio": "1250",
+        "descripcion": "Pala de gran calidad",
+        "categoria": "Ferreteria",
+        "stock": "20"
+    },
+    {
+        "id": 1,
+        "nombre": "Arco de Sierra fijo",
+        "precio": "1550",
+        "descripcion": "Arco de sierra de calidad",
+        "categoria": "Ferreteria",
+        "stock": "15"
+    },
+    {
+        "id": 2,
+        "nombre": "Martillo de Carpintero",
+        "precio": "1700",
+        "descripcion": "Martillo de calidad carpintero",
+        "categoria": "Ferreteria",
+        "stock": "23"
+    },
+    {
+        "id": 3,
+        "nombre": "Guantes Soldador",
+        "precio": "1200",
+        "descripcion": "Guantes largo soldador",
+        "categoria": "Ferreteria",
+        "stock": "25"
+    },
+    {
+        "id": 4,
+        "nombre": "Gas Butano",
+        "precio": "1250",
+        "descripcion": "Brogas",
+        "categoria": "Ferreteria",
+        "stock": "11"
+    },
+    {
+        "id": 5,
+        "nombre": "Arandela Bombe",
+        "precio": "550",
+        "descripcion": "accesorio para techo",
+        "categoria": "Buloneria",
+        "stock": "30"
+    },
+    {
+        "id": 6,
+        "nombre": "Arandela Casquillo Neoprene",
+        "precio": "660",
+        "descripcion": "accesorio para techo - Goma",
+        "categoria": "Buloneria",
+        "stock": "32"
+    },
+    {
+        "id": 7,
+        "nombre": "Gancho para techo",
+        "precio": "650",
+        "descripcion": "accesorio para techo",
+        "categoria": "Buloneria",
+        "stock": "35"
+    },
+    {
+        "id": 8,
+        "nombre": "Reten de seguridad",
+        "precio": "690",
+        "descripcion": "Arandela de Retencion",
+        "categoria": "Buloneria",
+        "stock": "32"
+    },
+    {
+        "id": 9,
+        "nombre": "Antirrobo",
+        "precio": "800",
+        "descripcion": "Bulones para Automotores",
+        "categoria": "Buloneria",
+        "stock": "27"
+    },
+    {
+        "id": 10,
+        "nombre": "Autoperforante Calada",
+        "precio": "660",
+        "descripcion": "Tornillos",
+        "categoria": "Buloneria",
+        "stock": "38"
+    },
+    {
+        "id": 11,
+        "nombre": "Allen cabeza cilindrico",
+        "precio": "600",
+        "descripcion": "Tornillos Allen",
+        "categoria": "Buloneria",
+        "stock": "40"
+    },
+    {
+        "id": 12,
+        "nombre": "Esparragos",
+        "precio": "570",
+        "descripcion": "Varillas",
+        "categoria": "Buloneria",
+        "stock": "36"
+    },
+    {
+        "id": 13,
+        "nombre": "Prisionero",
+        "precio": "550",
+        "descripcion": "Bulon",
+        "categoria": "Buloneria",
+        "stock": "32"
+    },
+    {
+        "id": 14,
+        "nombre": "Grillete omega",
+        "precio": "660",
+        "descripcion": "Acero inoxidable",
+        "categoria": "Buloneria",
+        "stock": "43"
+    },
+    {
+        "id": 15,
+        "nombre": "Guardacabos",
+        "precio": "500",
+        "descripcion": "Acero inoxidable",
+        "categoria": "Buloneria",
+        "stock": "32"
+    },
+    {
+        "id": 16,
+        "nombre": "Tensor Ojo-Gancho",
+        "precio": "660",
+        "descripcion": "Acero inoxidable",
+        "categoria": "Buloneria",
+        "stock": "35"
+    },
+    {
+        "id": 17,
+        "nombre": "Codo 45 H-H",
+        "precio": "660",
+        "descripcion": "Acero inoxidable",
+        "categoria": "Buloneria",
+        "stock": "32"
+    },
+    {
+        "id": 18,
+        "nombre": "Codo 90 H-H",
+        "precio": "660",
+        "descripcion": "Acero inoxidable",
+        "categoria": "Buloneria",
+        "stock": "32"
+    }
+]

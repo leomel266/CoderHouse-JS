@@ -17,13 +17,11 @@ function validarFormulario(e) {
     let id = 0;
     let formulario = e.target;
     let nombre = formulario.children[0].value;
-    let precio = formulario.children[1].value;
-    let descripcion = formulario.children[2].value;
-    let categoria = formulario.children[3].value;
-    let stock = formulario.children[4].value;
-    productos.push(new Producto(id, nombre, precio, descripcion, categoria, stock));
-    listarProductos()
-    totalCarritoHTML();
+    let apellido = formulario.children[1].value;
+    let seccion = formulario.children[2].value;
+    let jornada = formulario.children[3].value;
+    personal.push(new Personal(id, nombre, apellido, seccion, jornada));
+    cargarPersonal()
     guardarDatosDelUsr();
     e.target.reset();
 };
@@ -43,3 +41,59 @@ function encontrarProducto(e) {
     }
     e.target.reset();
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        obtenerContenido(URL)
+    }, 1000);
+})
+
+
+
+const eliminarb = () => {
+    let id = prompt("ingrese")
+    if (id > 0) {
+        fetch(`${URL}/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                obtenerContenido(URL)
+            })
+            .catch(err => console.log(err));
+
+
+    }
+}
+
+const agregarb = () => {
+    const nombreb = prompt('ingrese nombre del producto')
+    const preciob = prompt('ingrese precio del producto')
+    const descripcionb = prompt('ingrese la descripcion del producto')
+    const categoriab = prompt('ingrese la categoria del producto')
+    const stockb = prompt('ingrese el stock del producto')
+    fetch(`${URL}`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            nombre: `${nombreb}`,
+            preciob: `${preciob}`,
+            descripcion: `${descripcionb}`,
+            categoria: `${categoriab}`,
+            stock: `${stockb}`
+
+        })
+    })
+        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+            obtenerContenido(URL)
+        });
+}
+
+btnEliminar.addEventListener("click", eliminarb)
+btnAgregar.addEventListener("click", agregarb)
