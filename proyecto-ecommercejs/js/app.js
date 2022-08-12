@@ -5,7 +5,7 @@ miFormulario.addEventListener('submit', () => {
     Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Su producto fue añadido con exito',
+        title: 'Añadido con exito',
         showConfirmButton: false,
         timer: 1500
     })
@@ -49,22 +49,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
 })
 
+const showEliminar = () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Eliminado con exito',
+        showConfirmButton: false,
+        timer: 1500
+    })
+
+}
 
 
 const eliminarb = () => {
-    let id = prompt("ingrese")
+    let id = prompt("ingrese el ID del producto a eliminar")
     if (id > 0) {
         fetch(`${URL}/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                obtenerContenido(URL)
+                console.log(data),
+                    obtenerContenido(URL),
+                    showEliminar()
             })
             .catch(err => console.log(err));
-
-
     }
 }
 
