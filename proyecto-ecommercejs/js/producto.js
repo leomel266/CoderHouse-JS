@@ -1,7 +1,5 @@
 const productos = [];
-const carrito = [];
 const personal = []
-const listadoProductos = document.getElementById('listadoProductos');
 
 class Personal {
     static contadorPersonal = 0
@@ -134,43 +132,43 @@ proyectarIncremento(1.30);
 
 
 
-function cargarProductos() {
-    listadoProductos.innerHTML = '';
-    for (const producto of productos) {
-        const li = document.createElement("li");
-        li.className = "list-group-item";
-        li.innerText = `
-        ID: ${producto.id}\n
-        Nombre: ${producto.nombre}\n
-        Precio: $${producto.precioFinal()}\n
-        Descripcion: ${producto.descripcion}\n
-        Stock: ${producto.stock}\n
-        `;
-        li.id = producto.nombre + "Prod";
-        li.addEventListener("click", () => {
-            agregarAlCarrito(producto),
-                tCarritoHTML();
-        })
-        listadoProductos.append(li);
-    }
-}
+// function cargarProductos() {
+//     listadoProductos.innerHTML = '';
+//     for (const producto of productos) {
+//         const li = document.createElement("li");
+//         li.className = "list-group-item";
+//         li.innerText = `
+//         ID: ${producto.id}\n
+//         Nombre: ${producto.nombre}\n
+//         Precio: $${producto.precioFinal()}\n
+//         Descripcion: ${producto.descripcion}\n
+//         Stock: ${producto.stock}\n
+//         `;
+//         li.id = producto.nombre + "Prod";
+//         li.addEventListener("click", () => {
+//             agregarAlCarrito(producto),
+//                 tCarritoHTML();
+//         })
+//         listadoProductos.append(li);
+//     }
+// }
 
 //le puse un operador avanzado que se muestra por log ...carrito
 //por ahora no le encuentro uso en el proyecto pero lo implemento
 
-function agregarAlCarrito(prod) {
-    carrito.push(prod);
-    const filaCarrito = `<tr>
-                        <td>${prod.id}</td>
-                        <td>${prod.nombre}</td>
-                        <td>$${prod.precioFinal()}</td>
-                        <td>${prod.descripcion}</td>
-                        <td>${prod.categoria}</td>
-                        <td>${prod.stock}</td>
-                    </tr>`;
-    const listaTr = document.querySelector("#carritotr").innerHTML += filaCarrito;
+// function agregarAlCarrito(prod) {
+//     carrito.push(prod);
+//     const filaCarrito = `<tr>
+//                         <td>${prod.id}</td>
+//                         <td>${prod.nombre}</td>
+//                         <td>$${prod.precioFinal()}</td>
+//                         <td>${prod.descripcion}</td>
+//                         <td>${prod.categoria}</td>
+//                         <td>${prod.stock}</td>
+//                     </tr>`;
+//     const listaTr = document.querySelector("#carritotr").innerHTML += filaCarrito;
 
-}
+// }
 
 
 
@@ -273,6 +271,7 @@ const obtenerContenido = async (URL) => {
         spinner.innerHTML = ""
     }
 }
+
 
 const contenidoCard = (contenido) => {
     const { id, nombre, precio, descripcion, categoria, stock } = contenido

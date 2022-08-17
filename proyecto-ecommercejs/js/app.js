@@ -26,21 +26,6 @@ function validarFormulario(e) {
     e.target.reset();
 };
 
-let formBuscar = document.querySelector('#formularioBuscar')
-formBuscar.addEventListener('submit', encontrarProducto)
-
-function encontrarProducto(e) {
-    e.preventDefault();
-    let formularioBuscar = e.target;
-    let nombre = formularioBuscar.children[0].value;
-    let resultado = productos.filter((producto) => producto.nombre.includes(nombre));
-    if (nombre !== undefined) {
-        alert("Hay ")
-    } else {
-        alert("no se encontro")
-    }
-    e.target.reset();
-}
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -57,52 +42,78 @@ const showEliminar = () => {
         showConfirmButton: false,
         timer: 1500
     })
+}
+
+const showAgregar = () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Agregado con exito',
+        showConfirmButton: false,
+        timer: 1500
+    })
+}
+
+const showError = () => {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Ocurrio un problema',
+        showConfirmButton: false,
+        timer: 1500
+    })
 
 }
 
 
-const eliminarb = () => {
-    let id = prompt("ingrese el ID del producto a eliminar")
-    if (id > 0) {
-        fetch(`${URL}/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data),
-                    obtenerContenido(URL),
-                    showEliminar()
+const eliminarb = async () => {
+    try {
+        let id = prompt("ingrese el ID del producto a eliminar")
+        if (id > 0) {
+            const response = await fetch(`${URL}/${id}`, {
+                method: 'DELETE'
             })
-            .catch(err => console.log(err));
+            const data = await response.json();
+            obtenerContenido(URL);
+            showEliminar();
+        }
+
+    } catch (error) {
+        showError()
+
     }
 }
 
-const agregarb = () => {
-    const nombreb = prompt('ingrese nombre del producto')
-    const preciob = prompt('ingrese precio del producto')
-    const descripcionb = prompt('ingrese la descripcion del producto')
-    const categoriab = prompt('ingrese la categoria del producto')
-    const stockb = prompt('ingrese el stock del producto')
-    fetch(`${URL}`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            nombre: `${nombreb}`,
-            preciob: `${preciob}`,
-            descripcion: `${descripcionb}`,
-            categoria: `${categoriab}`,
-            stock: `${stockb}`
+const agregarb = async () => {
+    try {
+        const nombreb = prompt('ingrese nombre del producto')
+        const preciob = prompt('ingrese precio del producto')
+        const descripcionb = prompt('ingrese la descripcion del producto')
+        const categoriab = prompt('ingrese la categoria del producto')
+        const stockb = prompt('ingrese el stock del producto')
+        const response = await fetch(`${URL}`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nombre: `${nombreb}`,
+                preciob: `${preciob}`,
+                descripcion: `${descripcionb}`,
+                categoria: `${categoriab}`,
+                stock: `${stockb}`
 
+            })
         })
-    })
-        .then(res => res.json())
-        .then(res => {
-            console.log(res);
-            obtenerContenido(URL)
-        });
-}
+        const data = response.json()
+        obtenerContenido(URL);
+        showAgregar()
 
+
+    } catch (error) {
+        showError()
+
+    }
+}
 btnEliminar.addEventListener("click", eliminarb)
 btnAgregar.addEventListener("click", agregarb)

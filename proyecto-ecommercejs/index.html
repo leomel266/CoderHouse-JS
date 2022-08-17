@@ -31,11 +31,15 @@
             <h2>Agregar Personal</h2>
                 <div class="form-control">
                     <form id="formulario">
-                        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-                        <input type="text" name="apellido" id="apellido" placeholder="apellido">
-                        <input type="text" name="seccion" id="seccion" placeholder="sección">
-                        <input type="text" name="jornada" id="jornada" placeholder="jornada">
-                        <input id="sweetBtn" type="submit" value="enviar" placeholder="Enviar">
+                        <label >Nombre</label><br>
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
+                        <label >Apellido</label><br>
+                        <input type="text" name="apellido" id="apellido" placeholder="apellido"><br>
+                        <label >Sección</label><br>
+                        <input type="text" name="seccion" id="seccion" placeholder="sección"><br>
+                        <label >Jornada</label><br>
+                        <input type="text" name="jornada" id="jornada" placeholder="jornada"><br><br>
+                        <input class="btn btn-primary" id="sweetBtn" type="submit" value="enviar" placeholder="Enviar">
                     </form>
                 </div>
             <div>
@@ -47,8 +51,8 @@
                               <span class="visually-hidden">Loading...</span>
                             </div>
                           </div>
-                          <button id="btnAgregar">Agregar</button>
-                          <button id="btnEliminar">Eliminar</button>                  
+                          <button class="btn btn-primary" id="btnAgregar">Agregar</button>
+                          <button class="btn btn-danger" id="btnEliminar">Eliminar</button>                  
                         </table>           
                     </tbody>                 
             </div>
@@ -62,13 +66,6 @@
             </div>
 
         </aside>
-    
-        <div class="widget-2">
-            <div>
-                <form id="formularioBuscar">
-                </form>
-            </div>
-        </div>
         <footer class="footer">
             <h3>Todos los derechos</h3>
         </footer>
